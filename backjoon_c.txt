@@ -1,0 +1,16 @@
+1. algorithm header(#include)
+ - lower_bound / upper_bound / max_element / min_element / next_permutation / min / max
+2. numeric
+ - accumulate
+3. set
+ - multiset(allow duplicate)
+4. map
+ - hashmap
+5. queue
+ - priority_queue (min-heap/max-heap)
+6. vector
+7. string
+8. cstring (memset)
+9. cmath
+10. limits.h (INT_MAX)
+11. (HARD!) lambda
