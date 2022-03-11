@@ -6,7 +6,7 @@ def makeDict(K,V):
         D[K[i]]=V[i]
     return D
 
-# test
+# test case
 K=('Apple','Banana','Orange')
 V=(1,2,3)
 print(makeDict(K,V))
