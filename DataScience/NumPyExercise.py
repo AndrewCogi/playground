@@ -10,5 +10,8 @@ ht=np.array(np.random.randint(140,201,100))
 # compute the BMI for the 100 students, store them in a bmi array
 bmi=wt/((ht/100)*(ht/100))
 
+# print bmi array
+print(bmi)
+
 # print bmi array (first 10 elements of the bmi array)
 print(bmi[:10])
