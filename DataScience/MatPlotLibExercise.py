@@ -1,26 +1,49 @@
-# NumPy Coding Exercise
+# MatplotLib Coding Exercise
 import numpy as np
+import matplotlib.pyplot as plt
 
 # create a wt array with 100 random float numbers between 40.0 and 90.0
-wt=np.round(np.array(np.random.random(100)*50+40),1)
 wt=np.round(np.random.uniform(40,90,100),1)
 
 # create a ht array with 100 random integer numbers between 140 and 200
-ht=np.round(np.array(np.random.random(100)*60+140))
-ht=ht.astype(dtype='int64')
+ht=np.array(np.random.randint(140,201,100))
 
-#compute the BMI for the 100 students, store them in a bmi array
+# compute the BMI for the 100 students, store them in a bmi array
 bmi=wt/((ht/100)*(ht/100))
 
-# print bmi array
-print(bmi)
+# to prevent data loss, use round([bmi_data],1)
+bmi=np.round(bmi,1)
 
-
-# MatPlotLib Coding Exercise
-import matplotlib.pyplot as plt
 
 # Bar chart
-weight_status=['Underweight','Healthy','Overweight','Obese']
-students_bmi=[10,20,30,70]
-plt.bar(weight_status,students_bmi)
-plt.savefig('a')
+bmi_level=['Underweight','Healthy','Overweight','Obese']
+students=[0,0,0,0]
+
+for student_bmi in bmi:
+    if student_bmi < 18.5:
+        students[0] += 1
+    elif 18.5 <= student_bmi <= 24.9:
+        students[1] += 1
+    elif 25.0 <= student_bmi <= 29.9:
+        students[2] += 1
+    elif 30.0 <= student_bmi:
+        students[3] += 1
+
+plt.bar(bmi_level, students)
+plt.savefig('Barchart.png')
+
+# clear plt
+plt.clf()
+
+# Histogram
+plt.hist(bmi, bins = [bmi.min(), 18.5, 25.0, 30.0, bmi.max()])
+plt.title("histogram of result")
+plt.xticks([bmi.min(), 18.5, 25.0, 30.0, bmi.max()])
+plt.xlabel('BMI')
+plt.ylabel('number of students')
+plt.savefig('Histogram.png')
+
+# Pie chart
+
+
+# Scatter plot
