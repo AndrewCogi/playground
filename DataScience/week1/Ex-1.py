@@ -2,14 +2,13 @@ import math
 
 # define isPrime function
 def isPrime(n):
-    for i in range(2,int(math.sqrt(n))):
+    for i in range(2,int(math.sqrt(n))+1):
         if n%i == 0:
-            print("i:",i)
             return False;
     return True;
 
 # test case 1
-n=2
+n=4
 if isPrime(n) == True:
     print("result:",n,"is prime.")
 else:
