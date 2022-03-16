@@ -8,11 +8,11 @@ df = pd.DataFrame({
     'column_c':['+' , 3. , 2. , '&'],
     'column_d':[5. , '?' , 7. , '!']})
 
-# Display the DataFrame
-print(df)
-
 # Replace any non-numeric value with NaN
-df.replace({'?':np.NaN, '*':np.NaN, '+':np.NaN, '&':np.NaN, '!':np.NaN}, inplace=True)
+df.replace({'?':np.NaN, '*':np.NaN, '+':np.NaN, '&':np.NaN, '?':np.NaN, '!':np.NaN}, inplace=True)
 
-# Display the DataFrame
-print(df)
+# Display the DataFrame after applying each function (isna with any, and sum)
+# isna with any
+print(df.isna().any())
+# isna with sum
+print(df.isna().sum())
