@@ -13,7 +13,7 @@ df.replace({'?':np.NaN, '*':np.NaN, '+':np.NaN, '&':np.NaN, '?':np.NaN, '!':np.N
 
 # Display the DataFrame after applying each function (fillna with 100, mean, median)
 # fillna with 100
-print(df.fillna(100), end='\n\n')
+print(df.fillna(100))
 # fillna with mean
 mean = df.mean()
 print(df.fillna(mean))
