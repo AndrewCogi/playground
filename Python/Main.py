@@ -1,14 +1,7 @@
-import pandas as pd
 import numpy as np
-from sklearn.feature_selection import SelectKBest
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.feature_selection import chi2
 
-train = pd.read_csv('data/train.csv')
-test = pd.read_csv('data/test.csv')
+point1=[5,4]
+point2=[5,4]
 
-corrmat = train.corr()
-
-corr_features = corrmat.index
-
-print(corr_features)
+print(np.power(point1[0]-point2[0],2) + np.power(point1[1]-point2[1],2))
+print(np.sqrt(np.power(point1[0]-point2[0],2) + np.power(point1[1]-point2[1],2)))
