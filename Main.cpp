@@ -1,18 +1,26 @@
 #include <iostream>
+#include <stack>
 
 using namespace std;
 
-int func(int num){
-	int result = 1;
-	for(int i=num; i>0; i--){
-		result*=i;
-	}
-	return result;
-}
+stack<int> s;
 
 int main(void){
 	int n;
 	cin >> n;
-	cout << func(n);
+	for(int i=0; i<n; i++){
+		int num;
+		cin >> num;
+		if(num != 0) s.push(num);
+		else s.pop();
+	}
+	int size = s.size();
+	int result = 0;
+	for(int i=0; i<size; i++){
+		int temp = s.top();
+		s.pop();
+		result += temp;
+	}
+	cout << result;
 	return 0;
 }
