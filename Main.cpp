@@ -1,25 +1,26 @@
 #include <iostream>
-#include <stack>
+#include <algorithm>
 
 using namespace std;
-
-stack<int> s;
 
 int main(void){
 	int n;
 	cin >> n;
+	int arr1[n];
+	int arr2[n];
 	for(int i=0; i<n; i++){
-		int num;
-		cin >> num;
-		if(num != 0) s.push(num);
-		else s.pop();
+		cin >> arr1[i];
 	}
-	int size = s.size();
+	for(int i=0; i<n; i++){
+		cin >> arr2[i];
+	}
+	// sorting
+	sort(arr1,arr1+n);
+	sort(arr2,arr2+n);
+	// cal
 	int result = 0;
-	for(int i=0; i<size; i++){
-		int temp = s.top();
-		s.pop();
-		result += temp;
+	for(int i=0; i<n; i++){
+		result += arr1[i]*arr2[n-i-1];
 	}
 	cout << result;
 	return 0;
